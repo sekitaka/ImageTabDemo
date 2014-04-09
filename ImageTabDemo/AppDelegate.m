@@ -17,6 +17,10 @@
 
     [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"trans.png"]]; // tabの背景透過
     [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"trans.png"]]; // tabの上の線がでないように透過
+    // タイトル文字が設定されても見えないようにするため、文字色を透過
+    [[UITabBarItem appearance] setTitleTextAttributes:@{
+            NSForegroundColorAttributeName:[UIColor clearColor]
+    } forState:UIControlStateNormal];
     UIViewController *controller1 = [[UIViewController alloc]init] ;
     UIViewController *controller2 = [[UIViewController alloc]init] ;
     UITabBarController *tabBarController = [[UITabBarController alloc]init] ;
